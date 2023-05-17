@@ -13,4 +13,11 @@ const net = require("net");
   const myMessage = conn.on("data", (data) => {
     console.log(data)
   });
-  module.exports = {conn,myEncode,myMessage};  //object destucturing
+
+  //print a message to the screen and send name of the player to server
+  const myName = conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+    conn.write("Name: ww")
+  });
+
+  module.exports = {conn,myEncode,myMessage,myName};  //object destucturing
