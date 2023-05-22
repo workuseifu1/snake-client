@@ -8,6 +8,6 @@ const {setupInput} = require('./input');
 
 console.log("Connecting ...");
 connect();
-setupInput();
+setupInput(connect()); //return value from connect object pass to setupInput to interact with server.
 
 
